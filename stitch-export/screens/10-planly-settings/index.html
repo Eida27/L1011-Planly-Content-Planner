@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Planly - Settings</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-secondary-fixed": "#002113",
+                      "outline": "#7b7487",
+                      "on-secondary-fixed-variant": "#005236",
+                      "surface-container-low": "#eff4ff",
+                      "surface-tint": "#732ee4",
+                      "primary": "#630ed4",
+                      "surface-dim": "#cbdbf5",
+                      "secondary-fixed": "#6ffbbe",
+                      "inverse-primary": "#d2bbff",
+                      "on-primary-fixed-variant": "#5a00c6",
+                      "surface": "#f8f9ff",
+                      "on-tertiary-fixed-variant": "#653e00",
+                      "on-error": "#ffffff",
+                      "on-tertiary-fixed": "#2a1700",
+                      "surface-container-lowest": "#ffffff",
+                      "on-surface": "#0b1c30",
+                      "on-secondary-container": "#00714d",
+                      "surface-bright": "#f8f9ff",
+                      "surface-variant": "#d3e4fe",
+                      "error": "#ba1a1a",
+                      "on-primary": "#ffffff",
+                      "outline-variant": "#ccc3d8",
+                      "on-error-container": "#93000a",
+                      "error-container": "#ffdad6",
+                      "inverse-on-surface": "#eaf1ff",
+                      "primary-container": "#7c3aed",
+                      "tertiary": "#704500",
+                      "secondary": "#006c49",
+                      "background": "#f8f9ff",
+                      "secondary-container": "#6cf8bb",
+                      "inverse-surface": "#213145",
+                      "tertiary-fixed": "#ffddb8",
+                      "tertiary-fixed-dim": "#ffb95f",
+                      "surface-container-highest": "#d3e4fe",
+                      "secondary-fixed-dim": "#4edea3",
+                      "surface-container": "#e5eeff",
+                      "on-tertiary-container": "#ffe1c0",
+                      "on-surface-variant": "#4a4455",
+                      "on-background": "#0b1c30",
+                      "on-secondary": "#ffffff",
+                      "on-primary-fixed": "#25005a",
+                      "tertiary-container": "#905b00",
+                      "on-primary-container": "#ede0ff",
+                      "surface-container-high": "#dce9ff",
+                      "primary-fixed": "#eaddff",
+                      "on-tertiary": "#ffffff",
+                      "primary-fixed-dim": "#d2bbff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "stack-gap": "0.75rem",
+                      "gutter": "1.5rem",
+                      "sidebar-width": "260px",
+                      "container-margin": "2rem",
+                      "card-padding": "1.25rem"
+              },
+              "fontFamily": {
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "label-md": [
+                              "Inter"
+                      ],
+                      "headline-sm": [
+                              "Inter"
+                      ],
+                      "label-sm": [
+                              "Inter"
+                      ],
+                      "body-sm": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Inter"
+                      ],
+                      "display-lg": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "body-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-lg": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-md": [
+                              "13px",
+                              {
+                                      "lineHeight": "18px",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-sm": [
+                              "18px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-sm": [
+                              "11px",
+                              {
+                                      "lineHeight": "14px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined[data-weight="fill"] {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        /* Custom scrollbar for sidebar */
+        .sidebar-scroll::-webkit-scrollbar {
+            width: 4px;
+        }
+        .sidebar-scroll::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .sidebar-scroll::-webkit-scrollbar-thumb {
+            background-color: #ccc3d8;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md font-sans antialiased overflow-hidden flex h-screen w-full">
+<!-- SideNavBar Component -->
+<nav class="hidden md:flex flex-col bg-surface-container-low dark:bg-surface-container-lowest w-sidebar-width h-screen sticky left-0 top-0 border-r border-outline-variant dark:border-outline z-20 flex-shrink-0">
+<div class="flex flex-col h-full py-6 px-4">
+<!-- Brand -->
+<div class="flex items-center gap-3 mb-8 px-2">
+<div class="w-8 h-8 rounded-lg bg-primary text-on-primary flex items-center justify-center font-display-lg text-display-lg">
+<span class="text-[20px]">P</span>
+</div>
+<div>
+<h1 class="font-display-lg text-[20px] font-bold text-primary dark:text-primary-fixed leading-tight tracking-tight">Planly</h1>
+</div>
+</div>
+<!-- Navigation Links -->
+<div class="flex-1 overflow-y-auto sidebar-scroll pr-1 flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container transition-colors active:scale-95 duration-100 group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-primary transition-colors">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container transition-colors active:scale-95 duration-100 group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-primary transition-colors">post_add</span>
+<span class="font-label-md text-label-md">Content Planner</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container transition-colors active:scale-95 duration-100 group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-primary transition-colors">calendar_month</span>
+<span class="font-label-md text-label-md">Calendar</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container transition-colors active:scale-95 duration-100 group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-primary transition-colors">lightbulb</span>
+<span class="font-label-md text-label-md">Ideas</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container transition-colors active:scale-95 duration-100 group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-primary transition-colors">campaign</span>
+<span class="font-label-md text-label-md">Campaigns</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container transition-colors active:scale-95 duration-100 group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-primary transition-colors">monitoring</span>
+<span class="font-label-md text-label-md">Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-surface-container-high dark:bg-surface-container text-primary dark:text-primary-fixed font-bold border-r-4 border-primary dark:border-primary-fixed transition-colors active:scale-95 duration-100 group mt-4" href="#">
+<span class="material-symbols-outlined text-[20px]" data-weight="fill">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+</div>
+<!-- User Workspace Profile / CTA -->
+<div class="mt-auto pt-4 border-t border-outline-variant dark:border-outline">
+<div class="flex items-center gap-3 px-2 mb-4">
+<img alt="User Workspace Avatar" class="w-10 h-10 rounded-full object-cover border border-outline-variant" data-alt="A professional headshot of a young man wearing a modern tailored suit. He has short dark hair and a confident, subtle smile. The background is a blurred, bright contemporary office setting with soft, natural lighting coming from large windows. The image has a clean, high-key corporate aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2Hovk-rGn-nvF3uIxH9-Za5GwCmoDrGUUfBcIRtaaCAHYSQxZ2fhpgSuzdQxfJQASUd74q7jJTDvtGo14L01wrbMnPzVW-JbRRxCtR615wB7-85h77ly8Aoyxr7m8yO5uEeej1BV3a9N0XiOLmZo3JudYYftD4TLD41BZcCPmte6-SoiRXpPefiDyhhzFedUygyXcc9s_644tpMFQVfsJiFpuOTWNzhYEyN7nJIryTSnWGG36piLA1P8Ti_cR4n6AUS-wT5t04tE"/>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Alex Rivera</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Creator Pro</span>
+</div>
+</div>
+<button class="w-full py-2.5 bg-primary text-on-primary rounded-lg font-label-md text-label-md font-semibold hover:bg-primary-container hover:text-on-primary-container transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">workspace_premium</span>
+                    Upgrade Plan
+                </button>
+</div>
+</div>
+</nav>
+<!-- Main Content Wrapper -->
+<div class="flex-1 flex flex-col h-screen overflow-hidden">
+<!-- TopNavBar Component -->
+<header class="bg-surface dark:bg-background border-b border-outline-variant dark:border-outline w-full sticky top-0 z-10 flex-shrink-0">
+<div class="flex justify-between items-center w-full h-16 px-gutter">
+<!-- Left: Mobile Menu & Search -->
+<div class="flex items-center gap-4 flex-1">
+<button class="md:hidden p-2 text-on-surface-variant hover:bg-surface-container-highest rounded-full transition-all active:opacity-80">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="relative max-w-md w-full hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[20px]">search</span>
+<input class="w-full bg-surface-container-lowest border border-outline-variant text-on-surface rounded-full py-2 pl-10 pr-4 font-body-sm text-body-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all shadow-sm" placeholder="Search campaigns, ideas..." type="text"/>
+</div>
+</div>
+<!-- Right: Actions -->
+<div class="flex items-center gap-2">
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-highest dark:hover:bg-inverse-surface rounded-full transition-all active:opacity-80 relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2.5 h-2.5 bg-error rounded-full border-2 border-surface"></span>
+</button>
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-highest dark:hover:bg-inverse-surface rounded-full transition-all active:opacity-80">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+<div class="h-6 w-px bg-outline-variant mx-2 hidden sm:block"></div>
+<button class="hidden sm:flex items-center gap-2 bg-primary text-on-primary px-4 py-2 rounded-lg font-label-md text-label-md hover:opacity-90 transition-opacity active:scale-95 duration-100 shadow-sm">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                        Create Post
+                    </button>
+</div>
+</div>
+</header>
+<!-- Main Scrollable Canvas -->
+<main class="flex-1 overflow-y-auto bg-surface-bright dark:bg-background">
+<div class="max-w-[1200px] mx-auto p-container-margin">
+<!-- Page Header -->
+<div class="mb-8">
+<h2 class="font-display-lg text-display-lg text-on-surface">Settings</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Manage your account, workspaces, and application preferences.</p>
+</div>
+<div class="flex flex-col lg:flex-row gap-8">
+<!-- Settings Side Navigation (In-Page) -->
+<div class="w-full lg:w-64 flex-shrink-0">
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden shadow-[0_4px_6px_-1px_rgba(0,0,0,0.05)] sticky top-container-margin">
+<ul class="flex flex-col p-2">
+<li>
+<button class="w-full text-left px-4 py-2.5 rounded-lg flex items-center gap-3 font-label-md text-label-md bg-surface-container text-primary font-semibold transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-weight="fill">person</span>
+                                        Profile Settings
+                                    </button>
+</li>
+<li>
+<button class="w-full text-left px-4 py-2.5 rounded-lg flex items-center gap-3 font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-[20px]">storefront</span>
+                                        Workspace
+                                    </button>
+</li>
+<li>
+<button class="w-full text-left px-4 py-2.5 rounded-lg flex items-center gap-3 font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-[20px]">hub</span>
+                                        Connected Accounts
+                                    </button>
+</li>
+<li>
+<button class="w-full text-left px-4 py-2.5 rounded-lg flex items-center gap-3 font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-[20px]">notifications_active</span>
+                                        Notifications
+                                    </button>
+</li>
+<li>
+<button class="w-full text-left px-4 py-2.5 rounded-lg flex items-center gap-3 font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-[20px]">credit_card</span>
+                                        Billing &amp; Plan
+                                    </button>
+</li>
+<li>
+<button class="w-full text-left px-4 py-2.5 rounded-lg flex items-center gap-3 font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-[20px]">group</span>
+                                        Team
+                                    </button>
+</li>
+</ul>
+</div>
+</div>
+<!-- Settings Content Canvas -->
+<div class="flex-1 max-w-[800px] flex flex-col gap-6 pb-20">
+<!-- Profile Settings Section -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant shadow-[0_4px_6px_-1px_rgba(0,0,0,0.05)] overflow-hidden">
+<div class="px-card-padding py-5 border-b border-outline-variant bg-surface">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Profile Settings</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Update your personal information and how others see you.</p>
+</div>
+<div class="p-card-padding space-y-8">
+<!-- Avatar Upload -->
+<div class="flex items-center gap-6">
+<div class="relative">
+<img alt="User Avatar Large" class="w-24 h-24 rounded-full object-cover border-2 border-outline-variant" data-alt="A professional headshot of a young man wearing a modern tailored suit. He has short dark hair and a confident, subtle smile. The background is a blurred, bright contemporary office setting with soft, natural lighting coming from large windows. The image has a clean, high-key corporate aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCTQpUVKyfJrCU9t_9Dac3TT7P9Is0Rey50VOtclhkcQnvzU2CHRjKVVJQuK_lXbtUaPaIoXxtpyNQUczET3SHmRQgLI8FVW-F0ImAFHZa4MGgHmZ-KVxhb70D38Tgx7hmuGg3pdP_bAMIfzphKKl3EpODNTvCKnDh9cbo2AT5poHVWxPgJBNXX-qO6QN2mo9zTK15rafrY37WDxcbWpj9sgfGCxfWeUiow8MbYhABfUxIBNSiKG0xaphHWHZ7A4zIhkWzmOMHF5Y"/>
+<button class="absolute bottom-0 right-0 w-8 h-8 bg-surface-container-lowest border border-outline-variant rounded-full flex items-center justify-center text-on-surface hover:text-primary hover:border-primary transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[16px]">edit</span>
+</button>
+</div>
+<div>
+<div class="flex gap-3">
+<button class="px-4 py-2 bg-surface-container text-primary font-label-md text-label-md rounded-lg font-medium hover:bg-surface-container-high transition-colors">Upload new</button>
+<button class="px-4 py-2 bg-transparent text-on-surface-variant font-label-md text-label-md rounded-lg hover:bg-surface-container-lowest border border-outline-variant transition-colors">Remove</button>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2">Recommended: Square image, at least 400x400px.</p>
+</div>
+</div>
+<!-- Form Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="block font-label-md text-label-md text-on-surface">First Name</label>
+<input class="w-full bg-surface-container-lowest border border-outline-variant text-on-surface rounded-lg px-3 py-2 font-body-md text-body-md focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" type="text" value="Alex"/>
+</div>
+<div class="space-y-2">
+<label class="block font-label-md text-label-md text-on-surface">Last Name</label>
+<input class="w-full bg-surface-container-lowest border border-outline-variant text-on-surface rounded-lg px-3 py-2 font-body-md text-body-md focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" type="text" value="Rivera"/>
+</div>
+<div class="space-y-2 md:col-span-2">
+<label class="block font-label-md text-label-md text-on-surface">Email Address</label>
+<input class="w-full bg-surface-container-lowest border border-outline-variant text-on-surface rounded-lg px-3 py-2 font-body-md text-body-md focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" type="email" value="alex.rivera@example.com"/>
+</div>
+<div class="space-y-2 md:col-span-2">
+<label class="block font-label-md text-label-md text-on-surface">Short Bio</label>
+<textarea class="w-full bg-surface-container-lowest border border-outline-variant text-on-surface rounded-lg px-3 py-2 font-body-md text-body-md focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all resize-none" rows="3">Digital Strategist &amp; Content Creator. Focused on building high-growth SaaS brands.</textarea>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-right">86 / 200</p>
+</div>
+</div>
+</div>
+<div class="px-card-padding py-4 border-t border-outline-variant bg-surface-container-low flex justify-end gap-3">
+<button class="px-4 py-2 bg-transparent text-on-surface-variant font-label-md text-label-md rounded-lg hover:bg-surface-container-highest transition-colors">Cancel</button>
+<button class="px-6 py-2 bg-primary text-on-primary font-label-md text-label-md font-semibold rounded-lg hover:bg-primary-container transition-colors shadow-sm">Save Changes</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

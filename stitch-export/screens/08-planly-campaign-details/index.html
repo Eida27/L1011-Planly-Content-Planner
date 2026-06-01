@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Campaign Detail - Summer Product Launch</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #ccc3d8; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #7b7487; }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(204, 195, 216, 0.3);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary": "#006c49",
+                        "on-secondary-fixed-variant": "#005236",
+                        "on-secondary-container": "#00714d",
+                        "on-background": "#0b1c30",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed": "#eaddff",
+                        "background": "#f8f9ff",
+                        "error-container": "#ffdad6",
+                        "on-surface-variant": "#4a4455",
+                        "surface-tint": "#732ee4",
+                        "on-tertiary": "#ffffff",
+                        "outline": "#7b7487",
+                        "on-surface": "#0b1c30",
+                        "on-secondary-fixed": "#002113",
+                        "on-primary-fixed": "#25005a",
+                        "on-primary-container": "#ede0ff",
+                        "tertiary-fixed": "#ffddb8",
+                        "surface-container-low": "#eff4ff",
+                        "outline-variant": "#ccc3d8",
+                        "on-tertiary-container": "#ffe1c0",
+                        "surface-dim": "#cbdbf5",
+                        "error": "#ba1a1a",
+                        "secondary-container": "#6cf8bb",
+                        "on-tertiary-fixed-variant": "#653e00",
+                        "inverse-primary": "#d2bbff",
+                        "on-primary-fixed-variant": "#5a00c6",
+                        "inverse-surface": "#213145",
+                        "secondary-fixed-dim": "#4edea3",
+                        "surface-container-highest": "#d3e4fe",
+                        "surface-variant": "#d3e4fe",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-high": "#dce9ff",
+                        "secondary-fixed": "#6ffbbe",
+                        "on-tertiary-fixed": "#2a1700",
+                        "tertiary-container": "#905b00",
+                        "inverse-on-surface": "#eaf1ff",
+                        "primary": "#630ed4",
+                        "primary-container": "#7c3aed",
+                        "tertiary-fixed-dim": "#ffb95f",
+                        "primary-fixed-dim": "#d2bbff",
+                        "on-error-container": "#93000a",
+                        "tertiary": "#704500",
+                        "surface-bright": "#f8f9ff",
+                        "on-primary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "surface-container": "#e5eeff",
+                        "surface": "#f8f9ff",
+                        "sidebar-width": "260px"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-gap": "0.75rem",
+                        "gutter": "1.5rem",
+                        "sidebar-width": "260px",
+                        "card-padding": "1.25rem",
+                        "container-margin": "2rem"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "label-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "headline-sm": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                        "display-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-sm": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                        "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "600"}],
+                        "label-md": ["13px", {"lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+<!-- SideNavBar Shell -->
+<aside class="h-screen w-sidebar-width fixed left-0 top-0 border-r border-outline-variant bg-surface-container-lowest flex flex-col py-6 z-50">
+<div class="px-6 mb-8">
+<h1 class="text-headline-sm font-headline-sm font-bold text-primary">Planly</h1>
+<p class="font-label-md text-label-md text-on-surface-variant">Creator Pro</p>
+</div>
+<nav class="flex-1 space-y-1 px-3">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+                Dashboard
+            </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">event_note</span>
+                Content Planner
+            </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+                Calendar
+            </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">lightbulb</span>
+                Ideas
+            </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-primary font-bold border-r-4 border-primary bg-primary-container/10 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">campaign</span>
+                Campaigns
+            </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">leaderboard</span>
+                Analytics
+            </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">settings</span>
+                Settings
+            </a>
+</nav>
+<div class="px-4 mt-auto">
+<button class="w-full bg-primary text-on-primary py-3 rounded-xl font-label-md text-label-md font-bold shadow-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">upgrade</span>
+                Upgrade Plan
+            </button>
+</div>
+</aside>
+<!-- TopAppBar Shell -->
+<header class="fixed top-0 right-0 left-[260px] h-16 bg-surface flex justify-between items-center px-gutter z-40 border-b border-outline-variant">
+<div class="flex items-center bg-surface-container rounded-full px-4 py-2 w-96">
+<span class="material-symbols-outlined text-on-surface-variant">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-body-md w-full" placeholder="Search campaign assets..." type="text"/>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">help</span>
+</button>
+<div class="h-8 w-px bg-outline-variant mx-2"></div>
+<button class="bg-primary text-on-primary px-4 py-2 rounded-full font-label-md text-label-md font-bold hover:scale-95 transition-transform">
+                Create Post
+            </button>
+<img alt="User profile" class="h-8 w-8 rounded-full border-2 border-primary-container" data-alt="A professional headshot of a creative marketing director in a stylish modern office. The woman has a warm, confident expression and is wearing fashionable business casual attire. The background is softly blurred with hints of warm indoor lighting and modern architectural elements, reflecting a high-end corporate SaaS environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgBlLAA5RJpg_H_1tMJgOAF0-0Dxr7ZH3apIkkueOJ0MSwNOAHddEAo-pLekRtsv0yGu8Jad31HnHZBqv1Vs_4N572oGW8zKO4fi3aQK40b7SC9Z3dUTM5UfeXVfLPbGqqY43ZcWTCDTTu7pD30unI4HkgMth3dTgk4Iwgn3OpbXhwnmIwuajLVfbtJnIAQJTcu5IODvZ6F-p28ls2uUGIqg8RCFeiLqm6zClWIjY6qwhzvJL1NhNC-T1aYl6VF-jCvY29TS2n-dA"/>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-[260px] pt-16 min-h-screen p-gutter bg-background">
+<!-- Campaign Header -->
+<section class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
+<div>
+<nav class="flex items-center gap-2 text-label-sm font-label-sm text-on-surface-variant mb-1">
+<span>Campaigns</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-primary">Summer Product Launch</span>
+</nav>
+<div class="flex items-center gap-3">
+<h2 class="text-display-lg font-display-lg text-on-surface">Summer Product Launch</h2>
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-label-sm font-label-sm flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                        Active
+                    </span>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<button class="px-4 py-2 border border-outline text-on-surface rounded-lg font-label-md text-label-md hover:bg-surface-container transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+                    Edit Campaign
+                </button>
+<button class="px-4 py-2 bg-primary text-on-primary rounded-lg font-label-md text-label-md font-bold flex items-center gap-2 shadow-sm hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined text-[18px]">download</span>
+                    Export Report
+                </button>
+</div>
+</section>
+<!-- Performance Metrics Row -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter mb-8">
+<div class="bg-surface-container-lowest p-card-padding rounded-xl border border-outline-variant shadow-sm">
+<p class="text-on-surface-variant text-label-md font-label-md mb-2">Total Reach</p>
+<div class="flex items-baseline justify-between">
+<h3 class="text-display-lg font-display-lg text-on-surface">1.2M</h3>
+<span class="text-secondary font-label-sm flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">trending_up</span>
+                        12%
+                    </span>
+</div>
+<div class="mt-4 h-1 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 75%;"></div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-card-padding rounded-xl border border-outline-variant shadow-sm">
+<p class="text-on-surface-variant text-label-md font-label-md mb-2">Total Spend</p>
+<div class="flex items-baseline justify-between">
+<h3 class="text-display-lg font-display-lg text-on-surface">$12,450</h3>
+<span class="text-on-surface-variant font-label-sm">Budget: $15k</span>
+</div>
+<div class="mt-4 h-1 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary" style="width: 83%;"></div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-card-padding rounded-xl border border-outline-variant shadow-sm">
+<p class="text-on-surface-variant text-label-md font-label-md mb-2">Engagement Rate</p>
+<div class="flex items-baseline justify-between">
+<h3 class="text-display-lg font-display-lg text-on-surface">5.8%</h3>
+<span class="text-secondary font-label-sm flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">trending_up</span>
+                        0.4%
+                    </span>
+</div>
+<div class="mt-4 h-1 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-tertiary-container" style="width: 58%;"></div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-card-padding rounded-xl border border-outline-variant shadow-sm">
+<p class="text-on-surface-variant text-label-md font-label-md mb-2">Conversions</p>
+<div class="flex items-baseline justify-between">
+<h3 class="text-display-lg font-display-lg text-on-surface">1,248</h3>
+<span class="text-error font-label-sm flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">trending_down</span>
+                        2%
+                    </span>
+</div>
+<div class="mt-4 h-1 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-error" style="width: 45%;"></div>
+</div>
+</div>
+</div>
+<!-- Bento Grid Main Content -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Budget & Spend Chart -->
+<div class="lg:col-span-8 bg-surface-container-lowest p-card-padding rounded-xl border border-outline-variant shadow-sm">
+<div class="flex items-center justify-between mb-6">
+<h4 class="text-headline-sm font-headline-sm">Budget &amp; Spend Overview</h4>
+<select class="text-label-md font-label-md border-outline-variant rounded-lg bg-surface-container py-1 px-3">
+<option>Last 30 Days</option>
+<option>Full Campaign</option>
+</select>
+</div>
+<div class="h-[300px] w-full relative flex items-end gap-2 px-2">
+<!-- Faux Bar Chart -->
+<div class="flex-1 bg-primary/20 rounded-t-sm relative group h-[40%]">
+<div class="absolute bottom-0 w-full bg-primary rounded-t-sm h-[60%] transition-all group-hover:opacity-80"></div>
+</div>
+<div class="flex-1 bg-primary/20 rounded-t-sm relative group h-[55%]">
+<div class="absolute bottom-0 w-full bg-primary rounded-t-sm h-[75%] transition-all group-hover:opacity-80"></div>
+</div>
+<div class="flex-1 bg-primary/20 rounded-t-sm relative group h-[45%]">
+<div class="absolute bottom-0 w-full bg-primary rounded-t-sm h-[80%] transition-all group-hover:opacity-80"></div>
+</div>
+<div class="flex-1 bg-primary/20 rounded-t-sm relative group h-[70%]">
+<div class="absolute bottom-0 w-full bg-primary rounded-t-sm h-[90%] transition-all group-hover:opacity-80"></div>
+</div>
+<div class="flex-1 bg-primary/20 rounded-t-sm relative group h-[65%]">
+<div class="absolute bottom-0 w-full bg-primary rounded-t-sm h-[70%] transition-all group-hover:opacity-80"></div>
+</div>
+<div class="flex-1 bg-primary/20 rounded-t-sm relative group h-[85%]">
+<div class="absolute bottom-0 w-full bg-primary rounded-t-sm h-[85%] transition-all group-hover:opacity-80"></div>
+</div>
+<div class="flex-1 bg-primary/20 rounded-t-sm relative group h-[95%]">
+<div class="absolute bottom-0 w-full bg-primary rounded-t-sm h-[95%] transition-all group-hover:opacity-80"></div>
+</div>
+<div class="flex-1 bg-primary/20 rounded-t-sm relative group h-[80%]">
+<div class="absolute bottom-0 w-full bg-primary rounded-t-sm h-[60%] transition-all group-hover:opacity-80"></div>
+</div>
+<div class="flex-1 bg-primary/20 rounded-t-sm relative group h-[60%]">
+<div class="absolute bottom-0 w-full bg-primary rounded-t-sm h-[40%] transition-all group-hover:opacity-80"></div>
+</div>
+<div class="flex-1 bg-primary/20 rounded-t-sm relative group h-[40%]">
+<div class="absolute bottom-0 w-full bg-primary rounded-t-sm h-[30%] transition-all group-hover:opacity-80"></div>
+</div>
+<!-- Legend -->
+<div class="absolute top-0 right-0 flex gap-4">
+<div class="flex items-center gap-2 text-label-sm">
+<span class="w-3 h-3 bg-primary rounded-sm"></span> Actual Spend
+                        </div>
+<div class="flex items-center gap-2 text-label-sm">
+<span class="w-3 h-3 bg-primary/20 rounded-sm"></span> Forecast
+                        </div>
+</div>
+</div>
+<div class="flex justify-between mt-4 text-label-sm text-on-surface-variant px-2">
+<span>Week 1</span>
+<span>Week 2</span>
+<span>Week 3</span>
+<span>Week 4</span>
+</div>
+</div>
+<!-- Audience Insights -->
+<div class="lg:col-span-4 bg-surface-container-lowest p-card-padding rounded-xl border border-outline-variant shadow-sm flex flex-col">
+<h4 class="text-headline-sm font-headline-sm mb-6">Audience Insights</h4>
+<div class="flex-1 space-y-6">
+<div>
+<p class="text-label-md font-label-md text-on-surface-variant mb-2">Age Groups</p>
+<div class="space-y-2">
+<div class="flex items-center gap-4">
+<span class="text-body-sm w-12">18-24</span>
+<div class="flex-1 h-2 bg-surface-container rounded-full">
+<div class="h-full bg-primary rounded-full" style="width: 45%;"></div>
+</div>
+<span class="text-body-sm font-bold">45%</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-body-sm w-12">25-34</span>
+<div class="flex-1 h-2 bg-surface-container rounded-full">
+<div class="h-full bg-primary rounded-full" style="width: 32%;"></div>
+</div>
+<span class="text-body-sm font-bold">32%</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<p class="text-label-md font-label-md text-on-surface-variant mb-2">Gender</p>
+<div class="flex flex-col gap-1">
+<span class="text-headline-sm font-bold text-secondary">62% Female</span>
+<span class="text-body-sm text-on-surface-variant">38% Male</span>
+</div>
+</div>
+<div>
+<p class="text-label-md font-label-md text-on-surface-variant mb-2">Top Location</p>
+<div class="flex flex-col gap-1">
+<span class="text-headline-sm font-bold text-on-surface">New York, US</span>
+<span class="text-body-sm text-on-surface-variant">8% of total reach</span>
+</div>
+</div>
+</div>
+</div>
+<button class="mt-6 text-primary font-label-md text-label-md flex items-center justify-center gap-1 hover:underline">
+                    View Full Demographic Report
+                    <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+<!-- Channel Breakdown -->
+<div class="lg:col-span-5 bg-surface-container-lowest p-card-padding rounded-xl border border-outline-variant shadow-sm">
+<h4 class="text-headline-sm font-headline-sm mb-6">Channel Breakdown</h4>
+<div class="space-y-4">
+<div class="p-4 bg-surface-container rounded-lg flex items-center justify-between group hover:bg-surface-variant/30 transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 flex items-center justify-center text-white">
+<span class="material-symbols-outlined">photo_camera</span>
+</div>
+<div>
+<p class="font-bold text-on-surface">Instagram</p>
+<p class="text-label-sm text-on-surface-variant">520k Reach • 6.2% Eng.</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary">chevron_right</span>
+</div>
+<div class="p-4 bg-surface-container rounded-lg flex items-center justify-between group hover:bg-surface-variant/30 transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-black flex items-center justify-center text-white">
+<span class="material-symbols-outlined">movie</span>
+</div>
+<div>
+<p class="font-bold text-on-surface">TikTok</p>
+<p class="text-label-sm text-on-surface-variant">480k Reach • 7.5% Eng.</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary">chevron_right</span>
+</div>
+<div class="p-4 bg-surface-container rounded-lg flex items-center justify-between group hover:bg-surface-variant/30 transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white">
+<span class="material-symbols-outlined">social_leaderboard</span>
+</div>
+<div>
+<p class="font-bold text-on-surface">Facebook</p>
+<p class="text-label-sm text-on-surface-variant">200k Reach • 3.1% Eng.</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary">chevron_right</span>
+</div>
+</div>
+</div>
+<!-- Top Performing Content -->
+<div class="lg:col-span-7 bg-surface-container-lowest p-card-padding rounded-xl border border-outline-variant shadow-sm">
+<div class="flex items-center justify-between mb-6">
+<h4 class="text-headline-sm font-headline-sm">Top Performing Content</h4>
+<button class="text-label-md font-label-md text-primary hover:underline">View All Posts</button>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+<div class="relative group aspect-square rounded-lg overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A vibrant lifestyle photograph showing a minimalist aesthetic with clean lines and bright natural lighting. The subject is a high-end designer t-shirt displayed in a sun-drenched modern apartment setting. The color palette is warm and airy, emphasizing the premium quality of the product for a summer campaign." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbGeaS2Yd0NpJt7kXZVcN5EpqFfI-9_lUttIP504w5Xup5Kb0wdgFK1CrKjtPIxrzl2fGsPgBxYJbx9CJfnCv0j7G5U2FnanDxnpzyLkTq6vQVxaVne2IPdaGzGGHjXH4DYT-5pag-BVpv6AEpI4X6cf_6Iy03hi1J1UyAzDGMFzsR8zebaWZJn2iRMNTeXxU5FILzEQJhMjEHgwi_sQ-VS8j9JpgyBCAn0q6lC1fu3oo4Mz2nyxMzMSQO6Z-yV-9-yFM4cpKOBiU"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-3 opacity-0 group-hover:opacity-100 transition-opacity">
+<p class="text-white text-label-sm font-bold">12.4k Likes</p>
+<p class="text-white/80 text-[10px]">Instagram Reel</p>
+</div>
+</div>
+<div class="relative group aspect-square rounded-lg overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A cinematic outdoor shot of a professional male model wearing a sleek summer collection suit in a Mediterranean setting. The lighting is golden hour, creating deep, warm tones and highlighting the sophisticated textures of the clothing. The mood is aspirational, high-velocity fashion content for a digital campaign." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoL3JaTpiF-jA-J_yO9rCZ8-DoTs8og1LUVzdCirjmH7i1xPkD9FR60H6bLyn0EYWMj9tsNuKeRFYj3zjRcR6Vj3pTmDRN8jTr8ql3PcXnY5SG-tvLAi0NhMvWgp57kMVaaFk-hB4f74dSpMdqiws6RFuZlSI3H2nY3ZzfMDORAiFZCuiEezSKN_7mQ4_NmYCpVcYZtd0uIH9TBmkRkdOspi2KAUq7-_5KqcBGJ2e6z2GP2O6dArCSoc0fzLDQdi6_qlpslHCPMbo"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-3 opacity-0 group-hover:opacity-100 transition-opacity">
+<p class="text-white text-label-sm font-bold">8.2k Shares</p>
+<p class="text-white/80 text-[10px]">TikTok Trend</p>
+</div>
+</div>
+<div class="relative group aspect-square rounded-lg overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A dynamic, high-contrast studio shot of bright red athletic sneakers. The lighting is sharp and technical, emphasizing the energy and speed of the product. The overall style is clean and focused, typical of a top-performing social media ad for an active summer launch." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWLWTFy2CffWQqaBDaxA-mcL7lXlOm3MvcPrC_t_gWendbNyhkaUqMxwTE6Zj6dcPe05X9-X6_6x66mC908XkJiEne5iwWbk0KtF7_ggy00OeMGgd3Qz1gR7n3MD8QtW5uwGtLV5qCuHfTr8AO2Wf3R_u9Bxlwi_0FuQRjT-JKQ_gfWfj6g6FXuzw_Bb305BPr-pJDc8Shz1RCWbaPrz7kkIQ5xyowGcmLioyVPDXmgGicYMfGldZqczsN9lfypHxlypJ_hB9UpI4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-3 opacity-0 group-hover:opacity-100 transition-opacity">
+<p class="text-white text-label-sm font-bold">4.5k Saves</p>
+<p class="text-white/80 text-[10px]">FB Carousel</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Interactive Layer: Tooltip Faux Effect -->
+<div class="fixed hidden bg-on-background text-white text-body-sm px-2 py-1 rounded shadow-xl pointer-events-none z-50 transition-opacity duration-200" id="chart-tooltip">
+        $1,420 spent
+    </div>
+<script>
+        // Micro-interaction for the faux bar chart
+        const bars = document.querySelectorAll('.group');
+        const tooltip = document.getElementById('chart-tooltip');
+
+        bars.forEach(bar => {
+            bar.addEventListener('mousemove', (e) => {
+                tooltip.classList.remove('hidden');
+                tooltip.style.left = (e.pageX + 10) + 'px';
+                tooltip.style.top = (e.pageY - 30) + 'px';
+            });
+            bar.addEventListener('mouseleave', () => {
+                tooltip.classList.add('hidden');
+            });
+        });
+
+        // Atmospheric fade-in effect
+        document.addEventListener('DOMContentLoaded', () => {
+            const main = document.querySelector('main');
+            main.style.opacity = '0';
+            main.style.transition = 'opacity 0.6s ease-out';
+            setTimeout(() => {
+                main.style.opacity = '1';
+            }, 100);
+        });
+    </script>
+</body></html>

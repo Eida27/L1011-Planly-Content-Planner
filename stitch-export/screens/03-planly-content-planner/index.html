@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Content Planner | Planly</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error": "#ffffff",
+                        "inverse-surface": "#213145",
+                        "on-secondary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed": "#6ffbbe",
+                        "primary-fixed-dim": "#d2bbff",
+                        "background": "#f8f9ff",
+                        "inverse-primary": "#d2bbff",
+                        "surface-tint": "#732ee4",
+                        "surface-dim": "#cbdbf5",
+                        "on-primary-fixed-variant": "#5a00c6",
+                        "surface-container-highest": "#d3e4fe",
+                        "on-secondary-fixed": "#002113",
+                        "primary-container": "#7c3aed",
+                        "tertiary": "#704500",
+                        "surface-bright": "#f8f9ff",
+                        "on-surface": "#0b1c30",
+                        "error": "#ba1a1a",
+                        "tertiary-container": "#905b00",
+                        "on-primary-container": "#ede0ff",
+                        "surface-variant": "#d3e4fe",
+                        "outline": "#7b7487",
+                        "on-secondary-container": "#00714d",
+                        "tertiary-fixed-dim": "#ffb95f",
+                        "secondary-container": "#6cf8bb",
+                        "primary": "#630ed4",
+                        "secondary-fixed-dim": "#4edea3",
+                        "surface-container": "#e5eeff",
+                        "tertiary-fixed": "#ffddb8",
+                        "surface-container-low": "#eff4ff",
+                        "on-tertiary-fixed-variant": "#653e00",
+                        "on-tertiary-fixed": "#2a1700",
+                        "on-primary-fixed": "#25005a",
+                        "surface-container-lowest": "#ffffff",
+                        "on-background": "#0b1c30",
+                        "inverse-on-surface": "#eaf1ff",
+                        "error-container": "#ffdad6",
+                        "secondary": "#006c49",
+                        "outline-variant": "#ccc3d8",
+                        "surface-container-high": "#dce9ff",
+                        "surface": "#f8f9ff",
+                        "on-secondary-fixed-variant": "#005236",
+                        "on-tertiary-container": "#ffe1c0",
+                        "on-surface-variant": "#4a4455",
+                        "on-tertiary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "primary-fixed": "#eaddff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sidebar-width": "260px",
+                        "container-margin": "2rem",
+                        "card-padding": "1.25rem",
+                        "stack-gap": "0.75rem",
+                        "gutter": "1.5rem"
+                    },
+                    "fontFamily": {
+                        "headline-sm": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "label-md": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-sm": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                        "body-sm": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "600"}],
+                        "label-md": ["13px", {"lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                        "display-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .calendar-grid { display: grid; grid-template-columns: repeat(7, 1fr); }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-hidden">
+<div class="flex h-screen overflow-hidden">
+<!-- SideNavBar -->
+<aside class="w-sidebar-width h-screen sticky left-0 top-0 bg-surface-container-low flex flex-col h-full py-6 px-4">
+<div class="mb-10 px-2 flex items-center gap-3">
+<div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</div>
+<div>
+<h1 class="font-display-lg text-display-lg text-primary leading-none">Planly</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Creator Pro</p>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 text-on-surface-variant hover:bg-surface-container-high transition-colors rounded-xl active:scale-95 duration-100 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-primary font-bold border-r-4 border-primary bg-surface-container-high transition-colors rounded-xl active:scale-95 duration-100 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="post_add" style="font-variation-settings: 'FILL' 1;">post_add</span>
+<span>Content Planner</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-on-surface-variant hover:bg-surface-container-high transition-colors rounded-xl active:scale-95 duration-100 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+<span>Calendar</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-on-surface-variant hover:bg-surface-container-high transition-colors rounded-xl active:scale-95 duration-100 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="lightbulb">lightbulb</span>
+<span>Ideas</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-on-surface-variant hover:bg-surface-container-high transition-colors rounded-xl active:scale-95 duration-100 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="campaign">campaign</span>
+<span>Campaigns</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-on-surface-variant hover:bg-surface-container-high transition-colors rounded-xl active:scale-95 duration-100 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="monitoring">monitoring</span>
+<span>Analytics</span>
+</a>
+<div class="pt-4 mt-4 border-t border-outline-variant">
+<a class="flex items-center gap-3 px-3 py-2.5 text-on-surface-variant hover:bg-surface-container-high transition-colors rounded-xl active:scale-95 duration-100 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+</div>
+</nav>
+<div class="mt-auto bg-primary-container p-4 rounded-2xl">
+<p class="font-label-md text-label-md text-on-primary-container mb-2">Ready to scale?</p>
+<button class="w-full bg-on-primary-container text-primary-container py-2 rounded-xl font-label-md text-label-md hover:opacity-90 transition-opacity">Upgrade Plan</button>
+</div>
+</aside>
+<!-- Main Workspace -->
+<main class="flex-1 flex flex-col overflow-hidden">
+<!-- TopNavBar -->
+<header class="flex justify-between items-center w-full h-16 px-gutter bg-surface border-b border-outline-variant sticky top-0 z-10">
+<div class="flex items-center gap-4 flex-1">
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant" data-icon="search">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-container-low border-none rounded-full font-body-md focus:ring-2 focus:ring-primary focus:ring-offset-2 outline-none" placeholder="Search posts or ideas..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-highest rounded-full transition-all active:opacity-80">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-highest rounded-full transition-all active:opacity-80">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+<button class="bg-primary text-white px-6 py-2 rounded-full font-headline-sm text-headline-sm flex items-center gap-2 hover:opacity-90 active:opacity-80 transition-all">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+                        Create Post
+                    </button>
+</div>
+</header>
+<!-- Planner Split View -->
+<div class="flex-1 flex overflow-hidden">
+<!-- Left: Calendar View -->
+<section class="flex-1 overflow-y-auto p-6 bg-background hide-scrollbar border-r border-outline-variant">
+<div class="flex items-center justify-between mb-6">
+<div class="flex items-center gap-4">
+<h2 class="font-headline-md text-headline-md text-on-surface">September 2023</h2>
+<div class="flex bg-surface-container-high p-1 rounded-lg">
+<button class="px-4 py-1.5 text-label-md font-label-md bg-surface-container-lowest text-primary rounded-md shadow-sm">Monthly</button>
+<button class="px-4 py-1.5 text-label-md font-label-md text-on-surface-variant hover:text-on-surface">Weekly</button>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-1.5 hover:bg-surface-container-high rounded-full transition-colors"><span class="material-symbols-outlined">chevron_left</span></button>
+<button class="px-3 py-1 text-label-md font-label-md border border-outline-variant rounded-md hover:bg-surface">Today</button>
+<button class="p-1.5 hover:bg-surface-container-high rounded-full transition-colors"><span class="material-symbols-outlined">chevron_right</span></button>
+</div>
+</div>
+<div class="grid grid-cols-7 gap-px bg-outline-variant rounded-xl overflow-hidden border border-outline-variant">
+<!-- Days Header -->
+<div class="bg-surface-container-low p-3 text-center text-label-md font-label-md text-on-surface-variant uppercase tracking-wider">Mon</div>
+<div class="bg-surface-container-low p-3 text-center text-label-md font-label-md text-on-surface-variant uppercase tracking-wider">Tue</div>
+<div class="bg-surface-container-low p-3 text-center text-label-md font-label-md text-on-surface-variant uppercase tracking-wider">Wed</div>
+<div class="bg-surface-container-low p-3 text-center text-label-md font-label-md text-on-surface-variant uppercase tracking-wider">Thu</div>
+<div class="bg-surface-container-low p-3 text-center text-label-md font-label-md text-on-surface-variant uppercase tracking-wider">Fri</div>
+<div class="bg-surface-container-low p-3 text-center text-label-md font-label-md text-on-surface-variant uppercase tracking-wider">Sat</div>
+<div class="bg-surface-container-low p-3 text-center text-label-md font-label-md text-on-surface-variant uppercase tracking-wider">Sun</div>
+<!-- Calendar Cells -->
+<!-- Row 1: Partial -->
+<div class="bg-surface min-h-[140px] p-3 opacity-50"><span class="text-label-md text-on-surface-variant">28</span></div>
+<div class="bg-surface min-h-[140px] p-3 opacity-50"><span class="text-label-md text-on-surface-variant">29</span></div>
+<div class="bg-surface min-h-[140px] p-3 opacity-50"><span class="text-label-md text-on-surface-variant">30</span></div>
+<div class="bg-surface min-h-[140px] p-3 opacity-50"><span class="text-label-md text-on-surface-variant">31</span></div>
+<div class="bg-surface min-h-[140px] p-3 relative hover:bg-surface-container transition-colors group">
+<span class="text-label-md font-bold text-on-surface">1</span>
+<div class="mt-2 space-y-2">
+<div class="bg-primary-container text-on-primary-container p-2 rounded-lg text-xs font-label-md flex items-center gap-1.5 border border-primary/20">
+<span class="material-symbols-outlined text-[14px]">photo_camera</span> 09:00 - Insta
+                                </div>
+<div class="bg-secondary-container text-on-secondary-container p-2 rounded-lg text-xs font-label-md flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px]">videocam</span> 14:30 - TikTok
+                                </div>
+</div>
+</div>
+<div class="bg-surface min-h-[140px] p-3 relative hover:bg-surface-container transition-colors"><span class="text-label-md text-on-surface">2</span></div>
+<div class="bg-surface min-h-[140px] p-3 relative hover:bg-surface-container transition-colors"><span class="text-label-md text-on-surface">3</span></div>
+<!-- Row 2 -->
+<div class="bg-surface min-h-[140px] p-3 relative hover:bg-surface-container transition-colors"><span class="text-label-md text-on-surface">4</span></div>
+<div class="bg-surface min-h-[140px] p-3 relative hover:bg-surface-container transition-colors"><span class="text-label-md text-on-surface">5</span></div>
+<div class="bg-surface min-h-[140px] p-3 relative bg-primary-container/5 ring-2 ring-primary ring-inset">
+<span class="text-label-md font-bold text-primary">6</span>
+<div class="mt-2">
+<div class="bg-surface-container-highest text-on-surface p-2 rounded-lg text-xs font-label-md flex flex-col gap-1 border border-outline-variant shadow-sm animate-pulse">
+<span class="text-[10px] text-on-surface-variant uppercase font-bold">Drafting...</span>
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[14px]">edit</span> Coffee Reel</span>
+</div>
+</div>
+</div>
+<div class="bg-surface min-h-[140px] p-3 relative hover:bg-surface-container transition-colors"><span class="text-label-md text-on-surface">7</span></div>
+<div class="bg-surface min-h-[140px] p-3 relative hover:bg-surface-container transition-colors">
+<span class="text-label-md text-on-surface">8</span>
+<div class="mt-2">
+<div class="bg-tertiary-fixed text-on-tertiary-fixed p-2 rounded-lg text-xs font-label-md flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px]">social_leaderboard</span> 11:15 - Post
+                                </div>
+</div>
+</div>
+<div class="bg-surface min-h-[140px] p-3 relative hover:bg-surface-container transition-colors"><span class="text-label-md text-on-surface">9</span></div>
+<div class="bg-surface min-h-[140px] p-3 relative hover:bg-surface-container transition-colors"><span class="text-label-md text-on-surface">10</span></div>
+<!-- Grid continues for the rest of the month... -->
+<div class="bg-surface min-h-[140px] p-3 relative hover:bg-surface-container transition-colors"><span class="text-label-md text-on-surface">11</span></div>
+<div class="bg-surface min-h-[140px] p-3 relative hover:bg-surface-container transition-colors"><span class="text-label-md text-on-surface">12</span></div>
+<div class="bg-surface min-h-[140px] p-3 relative hover:bg-surface-container transition-colors"><span class="text-label-md text-on-surface">13</span></div>
+<div class="bg-surface min-h-[140px] p-3 relative hover:bg-surface-container transition-colors"><span class="text-label-md text-on-surface">14</span></div>
+<div class="bg-surface min-h-[140px] p-3 relative hover:bg-surface-container transition-colors"><span class="text-label-md text-on-surface">15</span></div>
+<div class="bg-surface min-h-[140px] p-3 relative hover:bg-surface-container transition-colors"><span class="text-label-md text-on-surface">16</span></div>
+<div class="bg-surface min-h-[140px] p-3 relative hover:bg-surface-container transition-colors"><span class="text-label-md text-on-surface">17</span></div>
+</div>
+</section>
+<!-- Right: Post Editor & Preview -->
+<aside class="w-[480px] bg-white flex flex-col border-l border-outline-variant overflow-y-auto hide-scrollbar">
+<!-- Editor Header -->
+<div class="p-6 border-b border-outline-variant flex items-center justify-between sticky top-0 bg-white/80 backdrop-blur-md z-20">
+<div>
+<h3 class="font-headline-sm text-headline-sm">New Content Post</h3>
+<p class="text-body-sm text-on-surface-variant">Scheduled for Sept 6, 2023</p>
+</div>
+<div class="px-3 py-1 bg-primary-container/20 text-primary font-label-md text-label-md rounded-full">Drafting</div>
+</div>
+<div class="p-6 space-y-8">
+<!-- Platform Selector -->
+<section>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-3 uppercase tracking-wider">Publish To</label>
+<div class="flex gap-3">
+<button class="w-12 h-12 rounded-xl flex items-center justify-center bg-primary text-white ring-2 ring-primary ring-offset-2 transition-all">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">photo_camera</span>
+</button>
+<button class="w-12 h-12 rounded-xl flex items-center justify-center bg-surface-container text-on-surface-variant hover:bg-surface-container-high transition-all">
+<span class="material-symbols-outlined">videocam</span>
+</button>
+<button class="w-12 h-12 rounded-xl flex items-center justify-center bg-surface-container text-on-surface-variant hover:bg-surface-container-high transition-all">
+<span class="material-symbols-outlined">social_leaderboard</span>
+</button>
+<button class="w-12 h-12 rounded-xl flex items-center justify-center bg-surface-container-low border border-dashed border-outline-variant text-on-surface-variant hover:bg-surface-container transition-all">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+</section>
+<!-- Media Placeholder -->
+<section>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-3 uppercase tracking-wider">Media</label>
+<div class="relative aspect-video bg-surface-container-low rounded-2xl border-2 border-dashed border-outline-variant flex flex-col items-center justify-center text-center p-6 group cursor-pointer hover:border-primary transition-colors overflow-hidden">
+<img class="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:scale-105 transition-transform" data-alt="A professional top-down photograph of a minimalist latte art coffee cup on a textured marble surface. The lighting is bright and airy with a sophisticated light-mode aesthetic. Soft morning sunlight creates delicate shadows, evoking a sense of calm and organized productivity. The overall style is clean, modern, and high-end for a social media lifestyle post." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeweBJ4auZnr4nAB0uW1JZaBFD6ZCvTHpUKD2gohKVyD-RsGB67PUlSrfj9Ffi8PhcpCVuqjIqEDo232zodwwc27kdwSOQh9vuw91VQcDiuHOVUOvXjB9Jx3MrAeA-aghAcE0cwAhUKPLWW7hwK6I4UTU6eKHcATxgWD7faObyEHbLU-Z54-k2AqQg1UmKRDD3I8MyPRK2u-h_9hcBaIvPWE2-ki6jKJcypUULkLGw6EZKctUl0dtQoSQu2W6QKUJbRGbeWQ1f2IY"/>
+<span class="material-symbols-outlined text-primary text-4xl mb-2 z-10">upload_file</span>
+<p class="font-label-md text-label-md text-on-surface z-10">Drop media here or <span class="text-primary font-bold underline">browse</span></p>
+<p class="text-[10px] text-on-surface-variant mt-1 z-10">Support for JPG, PNG, MP4 up to 50MB</p>
+</div>
+</section>
+<!-- Caption Editor -->
+<section>
+<div class="flex justify-between mb-2">
+<label class="block font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Caption</label>
+<button class="text-primary font-label-sm text-label-sm flex items-center gap-1 hover:underline">
+<span class="material-symbols-outlined text-[16px]">bolt</span> AI Assist
+                                </button>
+</div>
+<textarea class="w-full bg-surface-container-lowest border border-outline-variant rounded-xl p-4 font-body-md text-on-surface focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all" placeholder="What's on your mind?" rows="4"></textarea>
+<div class="flex justify-between mt-2">
+<span class="text-[11px] text-on-surface-variant">0/2200 characters</span>
+<div class="flex gap-2">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant cursor-pointer hover:text-primary transition-colors">sentiment_satisfied</span>
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant cursor-pointer hover:text-primary transition-colors">tag</span>
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant cursor-pointer hover:text-primary transition-colors">location_on</span>
+</div>
+</div>
+</section>
+<!-- Schedule & Time -->
+<section class="grid grid-cols-2 gap-4">
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-2 uppercase tracking-wider">Date</label>
+<div class="flex items-center gap-2 p-3 bg-surface-container-low border border-outline-variant rounded-xl cursor-pointer">
+<span class="material-symbols-outlined text-primary">calendar_today</span>
+<span class="font-body-md">Sept 6, 2023</span>
+</div>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-2 uppercase tracking-wider">Time (EST)</label>
+<div class="flex items-center gap-2 p-3 bg-surface-container-low border border-outline-variant rounded-xl cursor-pointer">
+<span class="material-symbols-outlined text-primary">schedule</span>
+<span class="font-body-md">10:30 AM</span>
+</div>
+</div>
+</section>
+<!-- Real-time Mobile Preview -->
+<section class="pb-10">
+<label class="block font-label-md text-label-md text-on-surface-variant mb-4 uppercase tracking-wider">Real-time Preview</label>
+<div class="relative mx-auto w-[240px] h-[480px] bg-black rounded-[2.5rem] border-[6px] border-[#212121] shadow-2xl overflow-hidden">
+<div class="absolute top-0 w-full h-5 bg-black flex justify-center items-center z-10">
+<div class="w-16 h-1 bg-[#333] rounded-full"></div>
+</div>
+<div class="w-full h-full bg-white flex flex-col pt-6">
+<!-- Insta Header -->
+<div class="flex items-center justify-between px-3 mb-2">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-gradient-to-tr from-yellow-400 to-purple-600 p-[1px]">
+<div class="w-full h-full rounded-full bg-white flex items-center justify-center">
+<div class="w-5 h-5 rounded-full bg-slate-200"></div>
+</div>
+</div>
+<span class="text-[10px] font-bold">your_brand</span>
+</div>
+<span class="material-symbols-outlined text-[14px]">more_horiz</span>
+</div>
+<!-- Insta Media -->
+<div class="w-full aspect-square bg-slate-100 flex items-center justify-center relative">
+<img class="w-full h-full object-cover" data-alt="A focused close-up of a white ceramic coffee cup with elegant latte art, resting on a clean white table. Beside the cup is a small sprig of lavender. The scene is bright and airy with high-key lighting, creating a professional and artistic social media feed vibe. The color palette is minimal, focusing on whites, creams, and subtle purple accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzf9HNcN-bz5iMHIZ4tP5iWrpVh36Lpu-leLEtztIuzNvcSsS1HTnKw6SHKmvwsBenmbekfjATTb4mZP2V5tWR5S8fl6eXDfQAKmMMGsp_YgPH4FUYlkCtmtLIvNXQDaMSBeLoNv3IHyMpGyR-d6Gk8wbmqwQF0McG9Uf7yON-e9yUgquW0mn9geGtz76c_KrFkxk0iALf_i3CY6HLVuz_zEjMq7tARhRg7QDQm_-QKZ_sRgikG7P5MoPpGoY62SONbe7rROa4DV8"/>
+</div>
+<!-- Insta Actions -->
+<div class="p-3">
+<div class="flex gap-3 mb-2">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+<span class="material-symbols-outlined text-[18px]">chat_bubble</span>
+<span class="material-symbols-outlined text-[18px]">send</span>
+</div>
+<p class="text-[10px]"><span class="font-bold">your_brand</span> Morning coffee and planning session... <span class="text-on-surface-variant">#productivity #planly</span></p>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Editor Footer Actions -->
+<div class="p-6 border-t border-outline-variant bg-surface-container-low flex gap-3 sticky bottom-0 z-20">
+<button class="flex-1 px-4 py-3 bg-white border border-outline-variant text-on-surface font-headline-sm rounded-xl hover:bg-surface-container transition-all active:scale-95">Save Draft</button>
+<button class="flex-[1.5] px-4 py-3 bg-primary text-white font-headline-sm rounded-xl shadow-lg shadow-primary/25 hover:opacity-90 transition-all active:scale-95">Schedule Post</button>
+</div>
+</aside>
+</div>
+</main>
+</div>
+<!-- Micro-interactions Script -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Simple tab switching simulation
+            const navItems = document.querySelectorAll('aside nav a');
+            navItems.forEach(item => {
+                item.addEventListener('click', (e) => {
+                    navItems.forEach(i => {
+                        i.classList.remove('text-primary', 'font-bold', 'border-r-4', 'border-primary', 'bg-surface-container-high');
+                        i.classList.add('text-on-surface-variant');
+                    });
+                    item.classList.add('text-primary', 'font-bold', 'border-r-4', 'border-primary', 'bg-surface-container-high');
+                    item.classList.remove('text-on-surface-variant');
+                });
+            });
+
+            // Active calendar cell logic
+            const cells = document.querySelectorAll('.calendar-grid > div:not(.bg-surface-container-low)');
+            cells.forEach(cell => {
+                cell.addEventListener('click', () => {
+                    cells.forEach(c => c.classList.remove('ring-2', 'ring-primary', 'ring-inset', 'bg-primary-container/5'));
+                    if(!cell.classList.contains('opacity-50')) {
+                        cell.classList.add('ring-2', 'ring-primary', 'ring-inset', 'bg-primary-container/5');
+                    }
+                });
+            });
+        });
+    </script>
+</body></html>

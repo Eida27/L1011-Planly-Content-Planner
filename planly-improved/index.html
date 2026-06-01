@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Planly Command Center</title>
+    <link rel="stylesheet" href="styles.css?v=2" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Primary navigation">
+        <a class="brand" href="#dashboard" aria-label="Planly home">
+          <span class="brand-mark">P</span>
+          <span>
+            <strong>Planly</strong>
+            <small>Content Ops</small>
+          </span>
+        </a>
+
+        <div class="workspace-switcher">
+          <span class="workspace-dot"></span>
+          <span>Northstar Studio</span>
+          <button type="button" aria-label="Change workspace">v</button>
+        </div>
+
+        <nav class="nav-list" role="tablist" aria-label="Planly sections">
+          <button class="nav-item is-active" type="button" data-view="dashboard" role="tab" aria-selected="true">
+            <span>01</span>
+            Dashboard
+          </button>
+          <button class="nav-item" type="button" data-view="planner" role="tab" aria-selected="false">
+            <span>02</span>
+            Planner
+          </button>
+          <button class="nav-item" type="button" data-view="ideas" role="tab" aria-selected="false">
+            <span>03</span>
+            Ideas
+          </button>
+          <button class="nav-item" type="button" data-view="analytics" role="tab" aria-selected="false">
+            <span>04</span>
+            Analytics
+          </button>
+          <button class="nav-item" type="button" data-view="campaigns" role="tab" aria-selected="false">
+            <span>05</span>
+            Campaigns
+          </button>
+          <button class="nav-item" type="button" data-view="calendar" role="tab" aria-selected="false">
+            <span>06</span>
+            Calendar
+          </button>
+          <button class="nav-item" type="button" data-view="settings" role="tab" aria-selected="false">
+            <span>07</span>
+            Settings
+          </button>
+        </nav>
+
+        <div class="sidebar-footer">
+          <p>Approval SLA</p>
+          <strong>92%</strong>
+          <span>12 posts ready for review</span>
+        </div>
+      </aside>
+
+      <div class="main-shell">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Social planning suite</p>
+            <h1>Planly Command Center</h1>
+          </div>
+          <label class="search">
+            <span>Search</span>
+            <input type="search" placeholder="Campaigns, creators, posts..." />
+          </label>
+          <div class="topbar-actions">
+            <button class="icon-button" type="button" aria-label="Notifications">
+              <span class="status-dot"></span>
+              !
+            </button>
+            <button class="secondary-button" type="button">Export</button>
+            <button class="primary-button" type="button">Create Post</button>
+          </div>
+        </header>
+
+        <main class="content">
+          <section class="view is-active" data-screen="dashboard" id="dashboard" tabindex="0">
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">Today</p>
+                <h2>Priority Queue</h2>
+              </div>
+              <p>Tuesday, June 2. Six channels are active and three assets need review before noon.</p>
+            </div>
+
+            <div class="metrics-grid">
+              <article class="metric-card">
+                <span>Total reach</span>
+                <strong>1.28M</strong>
+                <small class="positive">+18.4% vs last week</small>
+              </article>
+              <article class="metric-card">
+                <span>Approval time</span>
+                <strong>3.2h</strong>
+                <small class="positive">32 min faster</small>
+              </article>
+              <article class="metric-card">
+                <span>Risk flags</span>
+                <strong>4</strong>
+                <small class="warning">Two legal reviews</small>
+              </article>
+              <article class="metric-card">
+                <span>Publish load</span>
+                <strong>28</strong>
+                <small>Posts this week</small>
+              </article>
+            </div>
+
+            <div class="dashboard-grid">
+              <section class="panel">
+                <div class="panel-header">
+                  <h3>Content Pipeline</h3>
+                  <button class="text-button" type="button">View board</button>
+                </div>
+                <div class="pipeline">
+                  <article class="task-card">
+                    <span class="tag amber">Draft</span>
+                    <h4>Creator onboarding reel</h4>
+                    <p>TikTok and Reels cutdowns due today.</p>
+                    <footer><span>AR</span><time>10:30</time></footer>
+                  </article>
+                  <article class="task-card">
+                    <span class="tag purple">Review</span>
+                    <h4>Summer product launch</h4>
+                    <p>Paid and organic variants awaiting final copy.</p>
+                    <footer><span>MJ</span><time>13:00</time></footer>
+                  </article>
+                  <article class="task-card">
+                    <span class="tag green">Ready</span>
+                    <h4>Customer proof carousel</h4>
+                    <p>LinkedIn carousel approved for Thursday.</p>
+                    <footer><span>SL</span><time>16:45</time></footer>
+                  </article>
+                </div>
+              </section>
+
+              <section class="panel">
+                <div class="panel-header">
+                  <h3>Performance Mix</h3>
+                  <button class="text-button" type="button">Open analytics</button>
+                </div>
+                <div class="line-chart" aria-label="Engagement trend from Monday to Sunday">
+                  <span style="height: 28%"></span>
+                  <span style="height: 46%"></span>
+                  <span style="height: 35%"></span>
+                  <span style="height: 61%"></span>
+                  <span style="height: 74%"></span>
+                  <span style="height: 58%"></span>
+                  <span style="height: 82%"></span>
+                </div>
+                <div class="channel-list">
+                  <p><strong>Instagram</strong><span>42%</span></p>
+                  <p><strong>TikTok</strong><span>31%</span></p>
+                  <p><strong>LinkedIn</strong><span>18%</span></p>
+                  <p><strong>YouTube</strong><span>9%</span></p>
+                </div>
+              </section>
+
+              <section class="panel panel-wide">
+                <div class="panel-header">
+                  <h3>Creative References</h3>
+                  <button class="text-button" type="button">Open library</button>
+                </div>
+                <div class="asset-strip">
+                  <figure>
+                    <img src="../stitch-export/screens/04-planly-dashboard/screenshot.png" alt="Original dashboard export" />
+                    <figcaption>Dashboard audit</figcaption>
+                  </figure>
+                  <figure>
+                    <img src="../stitch-export/screens/07-planly-campaigns/screenshot.png" alt="Original campaigns export" />
+                    <figcaption>Campaign system</figcaption>
+                  </figure>
+                  <figure>
+                    <img src="../stitch-export/screens/09-planly-calendar/screenshot.png" alt="Original calendar export" />
+                    <figcaption>Calendar view</figcaption>
+                  </figure>
+                </div>
+              </section>
+            </div>
+          </section>
+
+          <section class="view" data-screen="planner" id="planner" tabindex="0" hidden>
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">Composer</p>
+                <h2>Weekly Content Planner</h2>
+              </div>
+              <p>Plan one campaign across channels without jumping between separate modal flows.</p>
+            </div>
+            <div class="two-column">
+              <section class="panel">
+                <div class="panel-header">
+                  <h3>New Content Post</h3>
+                  <span class="tag purple">Draft</span>
+                </div>
+                <div class="form-grid">
+                  <label>Title<input value="Summer Product Launch teaser" /></label>
+                  <label>Owner<input value="Maya Chen" /></label>
+                  <label class="full">Caption<textarea rows="6">Short launch teaser with product proof, creator quote, and a direct save-for-later CTA.</textarea></label>
+                  <label>Date<input value="June 4, 2026" /></label>
+                  <label>Time<input value="09:30 AM" /></label>
+                </div>
+                <div class="button-row">
+                  <button class="secondary-button" type="button">Save Draft</button>
+                  <button class="primary-button" type="button">Schedule Post</button>
+                </div>
+              </section>
+              <section class="panel">
+                <div class="panel-header">
+                  <h3>Channel Checklist</h3>
+                  <button class="text-button" type="button">Assign</button>
+                </div>
+                <ul class="checklist">
+                  <li><span class="check is-done"></span>Instagram square image approved</li>
+                  <li><span class="check is-done"></span>LinkedIn copy reviewed</li>
+                  <li><span class="check"></span>TikTok hook needs alternate cut</li>
+                  <li><span class="check"></span>UTM links waiting on campaign ID</li>
+                </ul>
+              </section>
+            </div>
+          </section>
+
+          <section class="view" data-screen="ideas" id="ideas" tabindex="0" hidden>
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">Research</p>
+                <h2>Ideas Board</h2>
+              </div>
+              <p>Separate idea capture from production, but show which ideas deserve momentum.</p>
+            </div>
+            <div class="idea-grid">
+              <article class="idea-card"><span class="tag amber">Briefing</span><h3>5 tips for better reel transitions</h3><p>Turn the tutorial thread into a short carousel and 15-second reel.</p></article>
+              <article class="idea-card"><span class="tag purple">Researching</span><h3>A day in the life of a creator</h3><p>Needs creator approval and b-roll availability by Friday.</p></article>
+              <article class="idea-card"><span class="tag green">Ready</span><h3>How analytics changes creative</h3><p>Use the performance mix chart as the hook and CTA.</p></article>
+              <article class="idea-card"><span class="tag rose">Blocked</span><h3>Partner giveaway announcement</h3><p>Legal needs updated rules before scheduling.</p></article>
+            </div>
+          </section>
+
+          <section class="view" data-screen="analytics" id="analytics" tabindex="0" hidden>
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">Signal</p>
+                <h2>Analytics Snapshot</h2>
+              </div>
+              <p>Condensed from the original tall analytics page into decision-ready panels.</p>
+            </div>
+            <div class="analytics-layout">
+              <section class="panel">
+                <div class="panel-header"><h3>Audience Growth</h3><span class="tag green">+12.8%</span></div>
+                <div class="area-chart" aria-label="Audience growth chart"></div>
+              </section>
+              <section class="panel">
+                <div class="panel-header"><h3>Top Posts</h3><button class="text-button" type="button">Export CSV</button></div>
+                <table>
+                  <thead><tr><th>Post</th><th>Channel</th><th>ER</th><th>Status</th></tr></thead>
+                  <tbody>
+                    <tr><td>Launch teaser</td><td>TikTok</td><td>8.4%</td><td><span class="tag green">Scale</span></td></tr>
+                    <tr><td>Founder POV</td><td>LinkedIn</td><td>5.9%</td><td><span class="tag purple">Keep</span></td></tr>
+                    <tr><td>Studio BTS</td><td>Instagram</td><td>3.7%</td><td><span class="tag amber">Revise</span></td></tr>
+                  </tbody>
+                </table>
+              </section>
+            </div>
+          </section>
+
+          <section class="view" data-screen="campaigns" id="campaigns" tabindex="0" hidden>
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">Campaign operations</p>
+                <h2>Marketing Campaigns</h2>
+              </div>
+              <p>Campaign state, budget, and production health share one scannable grid.</p>
+            </div>
+            <div class="campaign-list">
+              <article class="campaign-card">
+                <span class="tag green">Active</span>
+                <h3>Summer Product Launch</h3>
+                <p>Budget: $42,500. 18 assets. 83% production complete.</p>
+                <progress max="100" value="83"></progress>
+              </article>
+              <article class="campaign-card">
+                <span class="tag purple">Scheduled</span>
+                <h3>Creator Education Series</h3>
+                <p>Budget: $18,200. 9 assets. Review starts June 7.</p>
+                <progress max="100" value="64"></progress>
+              </article>
+              <article class="campaign-card">
+                <span class="tag amber">Planning</span>
+                <h3>Q3 Brand Refresh</h3>
+                <p>Budget pending. Naming and visual territories in review.</p>
+                <progress max="100" value="32"></progress>
+              </article>
+            </div>
+          </section>
+
+          <section class="view" data-screen="calendar" id="calendar" tabindex="0" hidden>
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">Schedule</p>
+                <h2>Calendar</h2>
+              </div>
+              <p>A production calendar that shows load, status, and actions without a separate side panel taking over the page.</p>
+            </div>
+            <div class="calendar-grid" aria-label="June publishing calendar">
+              <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+              <button type="button">1</button><button type="button">2</button><button class="has-event" type="button">3</button><button class="has-event strong" type="button">4</button><button type="button">5</button><button type="button">6</button><button type="button">7</button>
+              <button type="button">8</button><button class="has-event" type="button">9</button><button type="button">10</button><button class="has-event" type="button">11</button><button type="button">12</button><button type="button">13</button><button type="button">14</button>
+              <button class="has-event strong" type="button">15</button><button type="button">16</button><button type="button">17</button><button class="has-event" type="button">18</button><button type="button">19</button><button type="button">20</button><button type="button">21</button>
+              <button type="button">22</button><button class="has-event" type="button">23</button><button type="button">24</button><button type="button">25</button><button class="has-event strong" type="button">26</button><button type="button">27</button><button type="button">28</button>
+            </div>
+          </section>
+
+          <section class="view" data-screen="settings" id="settings" tabindex="0" hidden>
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">Workspace</p>
+                <h2>Settings</h2>
+              </div>
+              <p>Keep settings functional and calm, with fewer decorative containers than the original export.</p>
+            </div>
+            <section class="panel settings-panel">
+              <div class="panel-header"><h3>Profile Settings</h3><span class="tag purple">Owner</span></div>
+              <div class="form-grid">
+                <label>First name<input value="Alex" /></label>
+                <label>Last name<input value="Rivera" /></label>
+                <label>Email<input value="alex.rivera@example.com" /></label>
+                <label>Role<input value="Content Strategy Lead" /></label>
+                <label class="full">Brand notes<textarea rows="4">Prioritize practical creator workflows, proof-led campaign reporting, and restrained operational UI.</textarea></label>
+              </div>
+              <div class="button-row">
+                <button class="secondary-button" type="button">Cancel</button>
+                <button class="primary-button" type="button">Save Changes</button>
+              </div>
+            </section>
+          </section>
+        </main>
+      </div>
+    </div>
+    <script src="app.js?v=2"></script>
+  </body>
+</html>
