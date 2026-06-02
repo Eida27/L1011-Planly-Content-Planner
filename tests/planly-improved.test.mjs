@@ -51,6 +51,14 @@ test("Planly improved prototype provides accessible interactive navigation hooks
   assert.match(js, /localStorage\.setItem\("planly-active-view"/);
 });
 
+test("Planly improved prototype uses icons instead of numbered sidebar markers", () => {
+  const html = read("index.html");
+
+  assert.match(html, /class="nav-icon"/);
+  assert.match(html, /aria-hidden="true"/);
+  assert.doesNotMatch(html, /<span>0[1-7]<\/span>/);
+});
+
 test("Planly improved prototype suppresses the default full-section focus outline", () => {
   const css = read("styles.css");
 

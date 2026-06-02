@@ -136,9 +136,15 @@ button {
   border-radius: var(--radius);
 }
 
-.nav-item span {
-  font-size: 11px;
-  font-weight: 700;
+.nav-icon {
+  flex: 0 0 18px;
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .nav-item:hover,
